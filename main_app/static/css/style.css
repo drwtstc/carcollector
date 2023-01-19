@@ -2,6 +2,8 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Archivo Narrow', sans-serif;
+    background: #e8eaf6;
   }
   
   main {
@@ -11,4 +13,9 @@ body {
   footer.page-footer {
     padding-top: 0;
     text-align: right;
+    background: #90a4ae;
+  }
+
+  div.nav-wrapper{
+    background: #90a4ae;
   }

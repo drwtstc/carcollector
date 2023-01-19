@@ -5,7 +5,7 @@ from .models import Car, Part
 from .forms import MaintForm
 
 #for the inital response
-from django.http import HttpResponse
+#from django.http import HttpResponse
 
 # Create your views here.
 
@@ -35,8 +35,8 @@ def add_maint(request, car_id):
     return redirect('detail', car_id=car_id)
 
 def assoc_part(request, car_id, part_id):
-    Car.objects.get(id=car_id).parts.add(part_id)
-    return redirect('detail', car_id=car_id)
+  Car.objects.get(id=car_id).parts.add(part_id)
+  return redirect('detail', car_id=car_id)
 
 class CarCreate(CreateView):
     model = Car
