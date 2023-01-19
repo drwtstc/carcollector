@@ -9,11 +9,27 @@ SERVICES = (
 )
 
 # Create your models here.
+
+class Part(models.Model):
+  name = models.CharField(max_length=50)
+  purpose = models.CharField(
+        'Purpose(Interior or Exterior)',
+        max_length=20,
+    )
+
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('parts_detail', kwargs={'pk': self.id})
+
 class Car(models.Model):
     model = models.CharField(max_length=100)
     make = models.CharField(max_length=100)
     year = models.IntegerField()
     description = models.TextField(max_length=300)
+    parts = models.ManyToManyField(Part)
 
     def __str__(self):
         return self.model

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Parts List</h1>
+
+{% for part in parts_list %}
+  <a href="{% url 'parts_detail' part.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ part.name }}</span>
+            <p>Purpose: {{ part.purpose }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
